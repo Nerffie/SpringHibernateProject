@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +20,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
 	
 	<!-- animation css files -->
-	<link rel="stylesheet" href="inc/css/animation-aos.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}resources/css/animation-aos.css">
 	<link href='${pageContext.request.contextPath}/resources/css/aos.css' rel='stylesheet prefetch' type="text/css" media="all" />
 	<!-- //animation css files -->
 
@@ -43,7 +44,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <div id="brand" data-aos="zoom-in-up">
         <div id="word-mark">
           <a href="Home"> 
-            <img alt="" src="inc/images/logosodibet.png">
+            <img alt="" src="${pageContext.request.contextPath}/resources/images/logosodibet.png">
           </a>
         </div>
       </div>
@@ -67,15 +68,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<br>
 					<h5><i class="fas mr-2 fa-laptop"></i>Se Connecter !</h5>
 					<br>
-					<form action="#" class="mt-4" method="post">
+					<form:form action="#" class="mt-4" method="post" modelAttribute="utilisateur">
 						
+						<form:label path="email" style="color:white;">Email</form:label>
+						<form:input path="email" class="form-control" type="email"/>
+						<form:label path="motDePasse" style="color:white;">Password</form:label>
+						<form:input path="motDePasse" type="password" />
+						
+						<!--
 						<input class="form-control" type="email" name="email" placeholder="Email" required />
 						<span class="erreur">${form.erreurs['email']}</span>
+						 <input class="form-control" type="password" name="password" placeholder="Mot de passe" required/> 
+						 <span class="erreur">${form.erreurs['password']}</span>-->
+						 
 						
-						<input class="form-control" type="password" name="password" placeholder="Mot de passe" required/>
-						<span class="erreur">${form.erreurs['password']}</span>
 						<input class="form-control text-capitalize" type="submit" value="Connexion">
-					</form>
+					</form:form>
 					<a href="SignUp"><i class="fas mr-2">Vous n'avez pas de compte ?</i></a>
 						<br><br><br><br><br><br>
 				</div>
@@ -88,12 +96,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //header -->
 
     <!-- js -->
-    <script src="inc/js/jquery-2.2.3.min.js"></script>
-    <script src="inc/js/bootstrap.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/jquery-2.2.3.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/bootstrap.js"></script>
     <!-- //js -->
 	
 	<!-- animation js -->
-	<script src='inc/js/aos.js'></script>
+	<script src='${pageContext.request.contextPath}/resources/js/aos.js'></script>
 	<script>
 		AOS.init({
             easing: 'ease-out-back',
@@ -104,7 +112,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //animation js -->
 
 	<!-- testimonials  Responsiveslides -->
-    <script src="inc/js/responsiveslides.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/js/responsiveslides.min.js"></script>
     <script>
         // You can also use"$(window).load(function() {"
         $(function () {
@@ -170,11 +178,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 	<!-- //sticky nav bar -->
 
-	<script src="inc/js/smoothscroll.js"></script><!-- Smooth scrolling -->
+	<script src="${pageContext.request.contextPath}/js/smoothscroll.js"></script><!-- Smooth scrolling -->
 
     <!-- start-smoth-scrolling -->
-    <script src="inc/js/move-top.js"></script>
-    <script src="inc/js/easing.js"></script>
+    <script src="${pageContext.request.contextPath}/js/move-top.js"></script>
+    <script src="${pageContext.request.contextPath}/js/easing.js"></script>
     <script>
         jQuery(document).ready(function ($) {
             $(".scroll").click(function (event) {

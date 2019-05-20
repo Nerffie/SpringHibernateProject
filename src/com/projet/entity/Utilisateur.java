@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.NaturalId;
+
 
 @Entity
 @Table(name="utilisateur")
@@ -90,6 +92,12 @@ public class Utilisateur {
 		this.dateInscription = dateInscription;
 		this.valideHash = valideHash;
 		this.dateConnexion = dateConnexion;
+	}
+
+	public Utilisateur(String email, String motDePasse) {
+		super();
+		this.email = email;
+		this.motDePasse = motDePasse;
 	}
 
 	public Utilisateur(String prenom, String nom, Date dateNaissance, String email, String ville, String motDePasse,

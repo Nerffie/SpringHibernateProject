@@ -38,9 +38,9 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	@Transactional
-	public Utilisateur getUser(int id) {
+	public Utilisateur getUserFromEmail(String email) {
 		// TODO Auto-generated method stub
-		return userDAO.getUser(id);
+		return userDAO.getUserByEmail(email);
 	}
 
 
@@ -49,6 +49,19 @@ public class UserServiceImpl implements UserService {
 	public void deleteUser(int id) {
 		// TODO Auto-generated method stub
 		userDAO.deleteUser(id);
+	}
+	
+	public boolean passwordMatch(String motDePasse,Utilisateur user) {
+		return userDAO.passwordMatch(motDePasse,user);
+
+	}
+
+
+	@Override
+	@Transactional
+	public void updateConnexion(Utilisateur user) {
+		// TODO Auto-generated method stub
+		userDAO.updateConnexion(user);
 	}
 
 }

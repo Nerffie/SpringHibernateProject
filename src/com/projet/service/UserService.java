@@ -11,7 +11,11 @@ public interface UserService {
 
 	public void saveUser(Utilisateur u);
 
-	public Utilisateur getUser(int id);
+	public Utilisateur getUserFromEmail(String email);
+	
 
 	public void deleteUser(int id);
+	public boolean passwordMatch(String motDePasse,Utilisateur user);
+
+	public void updateConnexion(Utilisateur user);
 }
